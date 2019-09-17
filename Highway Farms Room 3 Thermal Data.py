@@ -2,7 +2,12 @@
 # coding: utf-8
 
 # Script for processing Highway Farms Environment data for Room 3
-# This code along with the stats compiler code added at the end of the file are intended to automate reading in all pertinent raw data files for each individual sensor and a file of the farrow and wean dates accosiated with the sensor pods. The code then selects the correct date range, downsamples to a 5 minute interval on the mean method, convert Farenheit values to celeus, joins the individual sensors into a data frame for each pod. Calculations for the mean radiant temperature are performed where necessary with the correct values for ball diameter. Summary statistics are performed for each sensor pod and outputed. The last section of the code is what compiles all the stats into a single file to be used to create graphs for a publication.
+# This code along with the stats compiler code added at the end of the file are intended to automate reading in all pertinent raw 
+#data files for each individual sensor and a file of the farrow and wean dates accosiated with the sensor pods. 
+#The code then selects the correct date range, downsamples to a 5 minute interval on the mean method, convert Farenheit values to celeus, 
+#joins the individual sensors into a data frame for each pod. Calculations for the mean radiant temperature are performed where necessary 
+#with the correct values for ball diameter. Summary statistics are performed for each sensor pod and outputed. The last section of the 
+#code is what compiles all the stats into a single file to be used to create graphs for a publication.
 # Further work includes duplicating this script and customizing it to the Room 4 sensor setup that is very different from this room.
 # 
 
@@ -437,7 +442,7 @@ RM3.head()
 # In[17]:
 
 
-# Perform stats on the Sensor Pod data, Output stats to txt file
+# Perform stats on the Sensor Pod data, Output stats to csv file
 #Haven1
 print(H1.describe())
 H1st= H1.describe()
@@ -654,13 +659,13 @@ plt.savefig('Heat Lamp 1 Temp Profile.png')
 
 #HL1 Do not run for January Turn
 # Make a plot of RH for qulaity checks
-plt.plot(HL1['RH'], color ='blue', label='RH')
-plt.legend()
-plt.xlabel('Date')
-plt.ylabel('Relative Humidity, %')
-plt.title('Heat Lamp 1 RH Profile')
+#plt.plot(HL1['RH'], color ='blue', label='RH')
+#plt.legend()
+#plt.xlabel('Date')
+#plt.ylabel('Relative Humidity, %')
+#plt.title('Heat Lamp 1 RH Profile')
 #show.fig()
-plt.savefig('Heat Lamp 1 RH Profile.png')
+#plt.savefig('Heat Lamp 1 RH Profile.png')
 
 
 # In[30]:
